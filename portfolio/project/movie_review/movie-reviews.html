@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 리뷰 & 추천</title>
+    <link rel="stylesheet" href="movie-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home"><i class="fas fa-film"></i> MovieReview</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">홈</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#movies" class="nav-link">영화</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#reviews" class="nav-link">리뷰</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#recommendations" class="nav-link">추천</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#add-review" class="nav-link">리뷰 작성</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    당신의 <span class="highlight">영화 여정</span>을 공유하세요
+                </h1>
+                <p class="hero-subtitle">
+                    영화 리뷰 작성 | 개인화 추천 | 커뮤니티와 소통
+                </p>
+                <p class="hero-description">
+                    좋아하는 영화를 리뷰하고, 다른 사람들의 추천을 받아보세요. 당신의 다음 즐거움을 찾아보세요.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#add-review" class="btn btn-primary">리뷰 작성하기</a>
+                    <a href="#movies" class="btn btn-secondary">영화 탐색</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="movie-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movies Section -->
+    <section id="movies" class="movies">
+        <div class="container">
+            <h2 class="section-title">인기 영화</h2>
+            <div class="search-bar">
+                <input type="text" id="movie-search" placeholder="영화 제목을 검색하세요...">
+                <button class="btn btn-search"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="movies-grid" id="movies-grid">
+                <!-- 영화 카드가 동적으로 추가됩니다 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title">최신 리뷰</h2>
+            <div class="reviews-filter">
+                <select id="genre-filter">
+                    <option value="all">모든 장르</option>
+                    <option value="action">액션</option>
+                    <option value="drama">드라마</option>
+                    <option value="comedy">코미디</option>
+                    <option value="thriller">스릴러</option>
+                    <option value="romance">로맨스</option>
+                </select>
+                <select id="rating-filter">
+                    <option value="all">모든 평점</option>
+                    <option value="5">5점</option>
+                    <option value="4">4점 이상</option>
+                    <option value="3">3점 이상</option>
+                </select>
+            </div>
+            <div class="reviews-container" id="reviews-container">
+                <!-- 리뷰가 동적으로 추가됩니다 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section id="recommendations" class="recommendations">
+        <div class="container">
+            <h2 class="section-title">맞춤 추천</h2>
+            <div class="recommendation-form">
+                <h3>당신의 취향을 알려주세요</h3>
+                <div class="preference-grid">
+                    <div class="preference-item">
+                        <label>좋아하는 장르:</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" value="action"> 액션</label>
+                            <label><input type="checkbox" value="drama"> 드라마</label>
+                            <label><input type="checkbox" value="comedy"> 코미디</label>
+                            <label><input type="checkbox" value="thriller"> 스릴러</label>
+                            <label><input type="checkbox" value="romance"> 로맨스</label>
+                        </div>
+                    </div>
+                    <div class="preference-item">
+                        <label>선호하는 기간:</label>
+                        <select id="year-preference">
+                            <option value="recent">최신 영화</option>
+                            <option value="classic">클래식</option>
+                            <option value="all">모든 기간</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="getRecommendations()">추천 받기</button>
+            </div>
+            <div class="recommendations-grid" id="recommendations-grid">
+                <!-- 추천 영화가 동적으로 추가됩니다 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Review Section -->
+    <section id="add-review" class="add-review">
+        <div class="container">
+            <h2 class="section-title">리뷰 작성</h2>
+            <form class="review-form" id="review-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="movie-title">영화 제목 *</label>
+                        <input type="text" id="movie-title" name="movie-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="movie-year">제작년도 *</label>
+                        <input type="number" id="movie-year" name="movie-year" min="1900" max="2024" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="movie-genre">장르 *</label>
+                        <select id="movie-genre" name="movie-genre" required>
+                            <option value="">장르 선택</option>
+                            <option value="action">액션</option>
+                            <option value="drama">드라마</option>
+                            <option value="comedy">코미디</option>
+                            <option value="thriller">스릴러</option>
+                            <option value="romance">로맨스</option>
+                            <option value="sf">SF</option>
+                            <option value="horror">공포</option>
+                            <option value="animation">애니메이션</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="movie-rating">평점 *</label>
+                        <div class="rating-input">
+                            <input type="range" id="movie-rating" name="movie-rating" min="1" max="5" value="3">
+                            <span id="rating-value">3</span>/5
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="review-title">리뷰 제목 *</label>
+                    <input type="text" id="review-title" name="review-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-content">리뷰 내용 *</label>
+                    <textarea id="review-content" name="review-content" rows="6" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="reviewer-name">작성자 이름 *</label>
+                    <input type="text" id="reviewer-name" name="reviewer-name" required>
+                </div>
+                <button type="submit" class="btn btn-primary">리뷰 게시</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MovieReview</h3>
+                    <p>영화 리뷰와 추천을 위한 최고의 플랫폼</p>
+                </div>
+                <div class="footer-section">
+                    <h4>빠른 링크</h4>
+                    <ul>
+                        <li><a href="#home">홈</a></li>
+                        <li><a href="#movies">영화</a></li>
+                        <li><a href="#reviews">리뷰</a></li>
+                        <li><a href="#recommendations">추천</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>소셜</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p>&copy; 2024 MovieReview. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="movie-script.js"></script>
+</body>
+</html>
