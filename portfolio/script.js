@@ -227,30 +227,38 @@ function animateCounters() {
     const speed = 200;
     
     counters.forEach(counter => {
-        const animate = () => {
-            const target = +counter.innerText.replace(/\D/g, '');
-            const count = +counter.innerText.replace(/\D/g, '');
-            const increment = target / speed;
+        const text = counter.innerText.trim();
+        const numbers = text.match(/\d+/);
+        
+        // 숫자가 있는 경우에만 애니메이션 적용
+        if (numbers && numbers.length > 0) {
+            const target = parseInt(numbers[0]);
+            const originalText = text;
             
-            if (count < target) {
-                counter.innerText = Math.ceil(count + increment) + counter.innerText.replace(/\d/g, '');
-                setTimeout(animate, 1);
-            } else {
-                counter.innerText = target + counter.innerText.replace(/\d/g, '');
-            }
-        };
-        
-        // Start animation when element is in viewport
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animate();
-                    observer.unobserve(entry.target);
+            const animate = () => {
+                const count = parseInt(counter.innerText.replace(/\D/g, '') || '0');
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animate, 1);
+                } else {
+                    counter.innerText = target;
                 }
+            };
+            
+            // Start animation when element is in viewport
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animate();
+                        observer.unobserve(entry.target);
+                    }
+                });
             });
-        });
-        
-        observer.observe(counter);
+            
+            observer.observe(counter);
+        }
     });
 }
 

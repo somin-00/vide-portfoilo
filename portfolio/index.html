@@ -48,10 +48,10 @@
                     안녕하세요, <span class="highlight">Your Name</span>입니다
                 </h1>
                 <p class="hero-subtitle">
-                    풀스택 개발자 | 웹 개발 전문가 | 문제 해결사
+                    퍼블리셔 | 웹 개발자 | 문제 해결사
                 </p>
                 <p class="hero-description">
-                    현대적인 웹 애플리케이션을 만드는 것을 즐기며, 사용자 경험과 기술적 완성도를 모두 중요하게 생각합니다.
+                    디자인팀과 기획팀과의 긴밀한 협업 경험이 있는 개발자로, 사용자 중심의 웹 애플리케이션을 만드는 것을 즐깁니다. 꾸준히 최신 기술을 학습하며 개발 역량을 확장하고 있습니다.
                 </p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
@@ -71,7 +71,7 @@
         <div class="container">
             <h2 class="section-title">소개</h2>
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-left">
                     <div class="about-highlight">
                         <h3>실무의 깊이를 더하고 기술의 경계를 넓히는 개발자</h3>
                         <p class="about-subtitle">
@@ -79,6 +79,8 @@
                             디자인팀과 기획팀과의 협업 후 프로젝트를 제작하고 제공하는 역할
                         </p>
                     </div>
+                </div>
+                <div class="about-right">
                     <div class="about-details">
                         <h4>상세 소개</h4>
                         <div class="detail-item">
@@ -116,36 +118,6 @@
                                 <p>이론적 기초 다지며 실무 경험과 학문적 지식의 균형 유지</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <h3>PL</h3>
-                        <p>프로젝트 리딩</p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>협업</h3>
-                        <p>디자인/기획팀</p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-universal-access"></i>
-                        </div>
-                        <h3>AIDT</h3>
-                        <p>웹 접근성</p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <h3>재학</h3>
-                        <p>컴퓨터과학과</p>
                     </div>
                 </div>
             </div>
@@ -237,12 +209,12 @@
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">프로젝트</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
+            <div class="projects-container">
+                <div class="project-item">
+                    <div class="project-icon">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
-                    <div class="project-content">
+                    <div class="project-info">
                         <h3>이커머스 플랫폼</h3>
                         <p>React와 Node.js를 사용한 현대적인 온라인 쇼핑몰 플랫폼입니다. 실시간 재고 관리, 결제 시스템, 사용자 인증等功能을 구현했습니다.</p>
                         <div class="project-tech">
@@ -251,17 +223,13 @@
                             <span>MongoDB</span>
                             <span>Stripe</span>
                         </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-small">데모 보기</a>
-                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
-                        </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-image">
+                <div class="project-item">
+                    <div class="project-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <div class="project-content">
+                    <div class="project-info">
                         <h3>데이터 분석 대시보드</h3>
                         <p>실시간 데이터 시각화와 분석을 위한 대시보드 애플리케이션입니다. 복잡한 데이터를 직관적인 차트와 그래프로 표현합니다.</p>
                         <div class="project-tech">
@@ -270,17 +238,13 @@
                             <span>Python</span>
                             <span>PostgreSQL</span>
                         </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-small">데모 보기</a>
-                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
-                        </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-image">
+                <div class="project-item">
+                    <div class="project-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <div class="project-content">
+                    <div class="project-info">
                         <h3>모바일 투두 앱</h3>
                         <p>React Native로 개발한 크로스플랫폼 투두 애플리케이션입니다. 오프라인 지원, 푸시 알림, 데이터 동기화 기능을 포함합니다.</p>
                         <div class="project-tech">
@@ -288,10 +252,6 @@
                             <span>Firebase</span>
                             <span>Redux</span>
                             <span>Expo</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-small">데모 보기</a>
-                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -303,63 +263,52 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">연락처</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>함께 일하고 싶으신가요?</h3>
-                    <p>새로운 프로젝트나 협업 기회에 대해 항상 열려있습니다. 아래 연락처로 편하게 연락주세요.</p>
-                    <div class="contact-items">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>이메일</h4>
-                                <p>your.email@example.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>전화</h4>
-                                <p>+82 10-1234-5678</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>위치</h4>
-                                <p>서울, 대한민국</p>
-                            </div>
-                        </div>
+            <div class="contact-container">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
                     </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+                    <div class="contact-info">
+                        <h3>이메일</h3>
+                        <p>your.email@example.com</p>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="이름" required>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
                     </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="이메일" required>
+                    <div class="contact-info">
+                        <h3>전화</h3>
+                        <p>+82 10-1234-5678</p>
                     </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder="제목" required>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" placeholder="메시지" required></textarea>
+                    <div class="contact-info">
+                        <h3>위치</h3>
+                        <p>서울, 대한민국</p>
                     </div>
-                    <button type="submit" class="btn btn-primary">메시지 보내기</button>
-                </form>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3>GitHub</h3>
+                        <p>github.com/yourname</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3>LinkedIn</h3>
+                        <p>linkedin.com/in/yourname</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
