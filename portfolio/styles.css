@@ -508,22 +508,50 @@ section {
 }
 
 /* Work Experience Section */
+.work-experience-section {
+    background: var(--bg-light);
+    padding: 80px 0;
+}
+
+.experience-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 .work-experience {
     margin-top: 3rem;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: 20px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.06),
+        0 2px 16px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 107, 107, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.work-experience::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    border-radius: 3px 3px 0 0;
 }
 
 .work-experience h4 {
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
     color: var(--text-dark);
-    font-weight: 600;
+    font-weight: 700;
     position: relative;
-    padding-left: 1rem;
+    padding-left: 1.5rem;
+    display: flex;
+    align-items: center;
 }
 
 .work-experience h4::before {
@@ -532,10 +560,10 @@ section {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 4px;
-    height: 20px;
+    width: 6px;
+    height: 24px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 .experience-item {
@@ -688,24 +716,15 @@ section {
 }
 
 /* 아이콘별 색상 설정 */
-.skill-item:nth-child(1) i { color: #e34c26; } /* HTML5 */
-.skill-item:nth-child(2) i { color: #1572b6; } /* CSS3 */
+.skill-item:nth-child(1) i { color: #e34c26; } /* HTML */
+.skill-item:nth-child(2) i { color: #1572b6; } /* CSS */
 .skill-item:nth-child(3) i { color: #f7df1e; } /* JavaScript */
-.skill-item:nth-child(4) i { color: #61dafb; } /* React */
-.skill-item:nth-child(5) i { color: #4fc08d; } /* Vue.js */
-.skill-item:nth-child(6) i { color: #06b6d4; } /* Tailwind CSS */
-.skill-item:nth-child(7) i { color: #339933; } /* Node.js */
-.skill-item:nth-child(8) i { color: #3776ab; } /* Python */
-.skill-item:nth-child(9) i { color: #336791; } /* SQL */
-.skill-item:nth-child(10) i { color: #ff9900; } /* AWS */
-.skill-item:nth-child(11) i { color: #2496ed; } /* Docker */
-.skill-item:nth-child(12) i { color: #68a063; } /* REST API */
-.skill-item:nth-child(13) i { color: #f05032; } /* Git */
-.skill-item:nth-child(14) i { color: #181717; } /* GitHub */
-.skill-item:nth-child(15) i { color: #007acc; } /* VS Code */
-.skill-item:nth-child(16) i { color: #f24e1e; } /* Figma */
-.skill-item:nth-child(17) i { color: #0052cc; } /* Jira */
-.skill-item:nth-child(18) i { color: #000000; } /* Terminal */
+.skill-item:nth-child(4) i { color: #31a8ff; } /* Photoshop */
+.skill-item:nth-child(5) i { color: #f24e1e; } /* Figma */
+.skill-item:nth-child(6) i { color: #3776ab; } /* Python */
+.skill-item:nth-child(7) i { color: #007acc; } /* VS Code */
+.skill-item:nth-child(8) i { color: #f05032; } /* Git */
+.skill-item:nth-child(9) i { color: #6d6d6d; } /* SVN */
 
 /* Projects Section */
 .projects {
@@ -1000,10 +1019,19 @@ section {
         font-size: 1.8rem;
     }
 
+    .work-experience-section {
+        padding: 60px 0;
+    }
+
     .work-experience {
         margin-top: 2rem;
         padding: 1.5rem;
         border-radius: 18px;
+    }
+
+    .work-experience h4 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
     }
 
     .experience-item {
