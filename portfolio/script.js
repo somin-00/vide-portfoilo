@@ -275,17 +275,32 @@ document.addEventListener('DOMContentLoaded', animateCounters);
 // });
 
 // Active Navigation Link
-window.addEventListener('scroll', () => {
+function updateActiveNav() {
     let current = '';
     const sections = document.querySelectorAll('section');
+    const scrollPosition = window.pageYOffset + window.innerHeight;
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 100) {
+        const sectionBottom = sectionTop + sectionHeight;
+        
+        // 섹션이 화면에 보이거나 스크롤이 섹션을 지나갔을 때
+        if (pageYOffset >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
     });
+    
+    // 최하단에 도달했을 때 마지막 섹션을 활성화
+    const lastSection = sections[sections.length - 1];
+    if (scrollPosition >= document.body.offsetHeight - 50) {
+        current = lastSection.getAttribute('id');
+    }
+    
+    // 스크롤이 최상단이거나 아무 섹션도 활성화되지 않았을 때 Home 활성화
+    if (!current && pageYOffset < 100) {
+        current = 'home';
+    }
     
     document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
@@ -293,16 +308,25 @@ window.addEventListener('scroll', () => {
             link.classList.add('active');
         }
     });
-});
+}
+
+// 스크롤 이벤트 리스너
+window.addEventListener('scroll', updateActiveNav);
+
+// 페이지 로드 시 초기 활성화
+document.addEventListener('DOMContentLoaded', updateActiveNav);
 
 // Add active link style
 const style = document.createElement('style');
 style.textContent = `
     .nav-link.active {
         color: var(--primary-color) !important;
+        font-weight: 600 !important;
     }
     .nav-link.active::after {
         width: 100% !important;
+        background: var(--primary-color) !important;
+        height: 3px !important;
     }
 `;
 document.head.appendChild(style);

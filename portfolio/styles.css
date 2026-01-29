@@ -513,16 +513,70 @@ section {
     padding: 80px 0;
 }
 
-.experience-container {
+.timeline-container {
     max-width: 1000px;
     margin: 0 auto;
+    position: relative;
+    padding-left: 40px;
 }
 
-.work-experience {
-    margin-top: 3rem;
-    padding: 2rem;
+/* 타임라인 중앙선 */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--secondary-color), var(--primary-color));
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* 타임라인 점 */
+.timeline-dot {
+    position: absolute;
+    left: -40px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 4px 20px rgba(255, 107, 107, 0.2),
+        0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.timeline-dot:hover {
+    transform: scale(1.1);
+    box-shadow: 
+        0 6px 25px rgba(255, 107, 107, 0.3),
+        0 3px 15px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-dot i {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+/* 타임라인 콘텐츠 */
+.timeline-content {
+    flex: 1;
     background: linear-gradient(145deg, #ffffff, #f8f9fa);
     border-radius: 20px;
+    padding: 2rem;
     box-shadow: 
         0 8px 32px rgba(0, 0, 0, 0.06),
         0 2px 16px rgba(0, 0, 0, 0.04),
@@ -530,9 +584,10 @@ section {
     border: 1px solid rgba(255, 107, 107, 0.08);
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease;
 }
 
-.work-experience::before {
+.timeline-content::before {
     content: '';
     position: absolute;
     top: 0;
@@ -543,44 +598,15 @@ section {
     border-radius: 3px 3px 0 0;
 }
 
-.work-experience h4 {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: var(--text-dark);
-    font-weight: 700;
-    position: relative;
-    padding-left: 1.5rem;
-    display: flex;
-    align-items: center;
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.1),
+        0 4px 20px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-.work-experience h4::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 24px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 3px;
-}
-
-.experience-item {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.1);
-    border-left: 4px solid var(--primary-color);
-    transition: all 0.3s ease;
-}
-
-.experience-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(255, 107, 107, 0.15);
-}
-
-.experience-header {
+.timeline-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -589,63 +615,67 @@ section {
     gap: 1rem;
 }
 
-.experience-title h5 {
-    font-size: 1.3rem;
+.timeline-title h5 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
     font-weight: 700;
-    color: var(--primary-color);
     margin-bottom: 0.5rem;
-    line-height: 1.2;
 }
 
-.experience-title span {
+.position {
     display: inline-block;
-    margin-right: 1rem;
-    margin-bottom: 0.3rem;
-    font-size: 0.9rem;
-    color: var(--text-light);
-    font-weight: 500;
-}
-
-.experience-title .status {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     padding: 0.3rem 0.8rem;
-    border-radius: 15px;
-    font-size: 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
     font-weight: 600;
-    margin-right: 0;
+    margin-right: 0.5rem;
 }
 
-.experience-date {
+.status {
+    display: inline-block;
+    background: #10b981;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.timeline-date {
+    background: rgba(255, 107, 107, 0.1);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-weight: 600;
     font-size: 0.9rem;
-    color: var(--text-light);
-    font-weight: 500;
     white-space: nowrap;
 }
 
-.experience-item p {
+.timeline-description p {
     color: var(--text-light);
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-size: 0.95rem;
 }
 
-.experience-tasks {
+.timeline-tasks {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.experience-tasks li {
+.timeline-tasks li {
     display: flex;
     align-items: center;
-    margin-bottom: 0.8rem;
+    padding: 0.5rem 0;
     color: var(--text-light);
     font-size: 0.9rem;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
-.experience-tasks li i {
+.timeline-tasks li i {
     color: var(--primary-color);
     margin-right: 0.8rem;
     font-size: 0.9rem;
