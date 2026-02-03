@@ -234,51 +234,112 @@
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">프로젝트</h2>
-            <div class="projects-container">
-                <div class="project-item">
-                    <div class="project-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>이커머스 플랫폼</h3>
-                        <p>React와 Node.js를 사용한 현대적인 온라인 쇼핑몰 플랫폼입니다. 실시간 재고 관리, 결제 시스템, 사용자 인증等功能을 구현했습니다.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                            <span>Stripe</span>
+            <div class="projects-slider">
+                <div class="slider-container">
+                    <div class="slider-wrapper">
+                        <div class="project-item">
+                            <div class="project-image-placeholder">
+                                <span>Sample</span>
+                            </div>
+                            <div class="project-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3>이커머스 플랫폼</h3>
+                                <p>React와 Node.js를 사용한 현대적인 온라인 쇼핑몰 플랫폼입니다. 실시간 재고 관리, 결제 시스템, 사용자 인증 등 기능을 구현했습니다.</p>
+                                <div class="project-tech">
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
+                                    <span>Stripe</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-image-placeholder">
+                                <span>Sample</span>
+                            </div>
+                            <div class="project-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3>데이터 분석 대시보드</h3>
+                                <p>실시간 데이터 시각화와 분석을 위한 대시보드 애플리케이션입니다. 복잡한 데이터를 직관적인 차트와 그래프로 표현합니다.</p>
+                                <div class="project-tech">
+                                    <span>Vue.js</span>
+                                    <span>D3.js</span>
+                                    <span>Python</span>
+                                    <span>PostgreSQL</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-image-placeholder">
+                                <span>Sample</span>
+                            </div>
+                            <div class="project-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3>모바일 투두 앱</h3>
+                                <p>React Native로 개발한 크로스플랫폼 투두 애플리케이션입니다. 오프라인 지원, 푸시 알림, 데이터 동기화 기능을 포함합니다.</p>
+                                <div class="project-tech">
+                                    <span>React Native</span>
+                                    <span>Redux</span>
+                                    <span>Expo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-image-placeholder">
+                                <span>Sample</span>
+                            </div>
+                            <div class="project-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3>실시간 채팅 앱</h3>
+                                <p>WebSocket을 활용한 실시간 메시징 애플리케이션입니다. 그룹 채팅, 파일 공유, 음성 통화 기능을 제공합니다.</p>
+                                <div class="project-tech">
+                                    <span>Socket.io</span>
+                                    <span>Express</span>
+                                    <span>Redis</span>
+                                    <span>WebRTC</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-image-placeholder">
+                                <span>Sample</span>
+                            </div>
+                            <div class="project-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3>AI 챗봇 서비스</h3>
+                                <p>자연어 처리 기반의 지능형 챗봇 서비스입니다. 고객 지원 자동화와 개인화된 응답을 제공합니다.</p>
+                                <div class="project-tech">
+                                    <span>Python</span>
+                                    <span>TensorFlow</span>
+                                    <span>FastAPI</span>
+                                    <span>Docker</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <button class="slider-btn prev-btn" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn next-btn" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
-                <div class="project-item">
-                    <div class="project-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>데이터 분석 대시보드</h3>
-                        <p>실시간 데이터 시각화와 분석을 위한 대시보드 애플리케이션입니다. 복잡한 데이터를 직관적인 차트와 그래프로 표현합니다.</p>
-                        <div class="project-tech">
-                            <span>Vue.js</span>
-                            <span>D3.js</span>
-                            <span>Python</span>
-                            <span>PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-item">
-                    <div class="project-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>모바일 투두 앱</h3>
-                        <p>React Native로 개발한 크로스플랫폼 투두 애플리케이션입니다. 오프라인 지원, 푸시 알림, 데이터 동기화 기능을 포함합니다.</p>
-                        <div class="project-tech">
-                            <span>React Native</span>
-                            <span>Firebase</span>
-                            <span>Redux</span>
-                            <span>Expo</span>
-                        </div>
-                    </div>
+                <div class="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                    <span class="dot" data-slide="4"></span>
                 </div>
             </div>
         </div>
