@@ -203,6 +203,68 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
+.hero-keywords {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: left;
+}
+
+.hero-keywords h3 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.keyword-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: flex-start;
+}
+
+.keyword-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+    border: 1px solid rgba(255, 107, 107, 0.2);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.keyword-item:hover {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(78, 205, 196, 0.15));
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+}
+
+.keyword-item i {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.keyword-item span {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
 /* Buttons */
 .btn {
     display: inline-block;
@@ -1152,23 +1214,68 @@ section {
     }
 
     .hero-container {
-        grid-template-columns: 1fr;
-        text-align: center;
+        display: flex;
+        flex-direction: column-reverse;
         gap: 2rem;
+        text-align: center;
     }
-
+    
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .hero-image {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    
     .hero-title {
         font-size: 2.5rem;
     }
-
+    
     .hero-subtitle {
         font-size: 1.2rem;
     }
-
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
     .profile-img {
         width: 200px;
         height: 200px;
         font-size: 5rem;
+    }
+    
+    .hero-keywords {
+        margin: 1.5rem 0;
+        padding: 1rem;
+    }
+    
+    .hero-keywords h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+        text-align: center;
+    }
+    
+    .keyword-grid {
+        gap: 0.6rem;
+        justify-content: center;
+    }
+    
+    .keyword-item {
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .keyword-item i {
+        font-size: 0.8rem;
+        width: 14px;
+        height: 14px;
+    }
+    
+    .keyword-item span {
+        font-size: 0.75rem;
     }
 
     .about-content {
@@ -1401,14 +1508,68 @@ section {
 }
 
 @media (max-width: 480px) {
-    .hero-buttons {
+    .hero-container {
         flex-direction: column;
-        align-items: center;
-    }
-
-    .btn {
-        width: 200px;
+        gap: 1.5rem;
         text-align: center;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .hero-image {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
+    }
+    
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        font-size: 4rem;
+        margin: 0 auto;
+    }
+    
+    .hero-keywords {
+        margin: 1rem 0;
+        padding: 0.8rem;
+    }
+    
+    .hero-keywords h3 {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .keyword-grid {
+        gap: 0.5rem;
+        justify-content: center;
+    }
+    
+    .keyword-item {
+        padding: 0.3rem 0.6rem;
+    }
+    
+    .keyword-item i {
+        font-size: 0.7rem;
+        width: 12px;
+        height: 12px;
+    }
+    
+    .keyword-item span {
+        font-size: 0.7rem;
     }
 
     .about-highlight {
